@@ -6,7 +6,7 @@ Sistema de Gestão de Disciplina implementado para avaliar o aprendizado a respe
 
 - Angelus Rocha;
 - Ayrllan Pacelli;
-- Myrella Almeida;
+- Myrela Almeida;
 - Rebeca Barbosa.
 
 
