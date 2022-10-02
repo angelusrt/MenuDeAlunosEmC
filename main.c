@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "Functions.h"
+#include "functions.h"
 #include <stdlib.h>
 
 void menu();
@@ -13,7 +13,12 @@ int main() {
 void menu(){
   int escolha;
 
-  printf("________Menu________\n\n");
+  (*pClass) = (struct classroom){
+    .pAluno = (struct aluno*)malloc(10 * sizeof(struct aluno)),
+    .length = 0
+  };
+
+  a: printf("________Menu________\n\n");
   printf("1: inclusão de alunos\n");
   printf("2: exclusão de alunos\n");
   printf("3: pesquisa de alunos\n");
@@ -25,22 +30,27 @@ void menu(){
     
   switch(escolha){
     case 1:
-      incluir();
+      incluir(pClass);
+      goto a;
     break;
     case 2:
-      excluir();
+      excluir(pClass);
+      goto a;
     break;
     case 3:
-      printf("Você solicitou a pesquisa");
+      pesquisa(pClass);
+      goto a;
     break;
     case 4:
-      printf("Você solicitou o relatório");
+      relatorio(pClass);
+      goto a;
     break;
     case 5:
-      sair();
+      sair(pClass);
+    break;
     default:
       printf("Opção inexistente, escolha novamente");
-      menu();
+      goto a;
     break;
   }
 }
